@@ -3,7 +3,10 @@ url: https://raw.githubusercontent.com/api-evangelist/doubao/refs/heads/main/api
 name: ByteDance Doubao
 x-type: company
 description: >-
-  Doubao is ByteDance's foundation model family, available via the Volcano Engine platform. Offers chat, vision, embeddings, and TTS through OpenAI-compatible endpoints.
+  Doubao is ByteDance's foundation model family, served via the Volcano Engine Ark platform.
+  Offers chat completions, deep reasoning, multimodal vision, embeddings, image generation
+  (Seedream), video generation (Seedance), 3D generation, and TTS through OpenAI-compatible
+  and native endpoints.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -11,13 +14,44 @@ tags:
   - Inference
   - ByteDance
   - Multimodal
+  - Volcano Engine
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: doubao:ark
+    name: Volcano Engine Ark API
+    description: >-
+      OpenAI-compatible chat, responses, embedding, batch, image (Seedream), video (Seedance),
+      3D, and TTS APIs serving the Doubao model family. Base URL https://ark.cn-beijing.volces.com/api/v3.
+      Includes the Doubao-Seed-Code coding model.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.volcengine.com/docs/82379
+    baseURL: https://ark.cn-beijing.volces.com/api/v3
+    tags:
+      - AI
+      - LLM
+      - Chat Completions
+      - Vision
+      - Embeddings
+      - Image Generation
+      - Video Generation
+      - Audio
+      - OpenAI Compatible
+    properties:
+      - type: Documentation
+        url: https://www.volcengine.com/docs/82379
+      - type: Console
+        url: https://console.volcengine.com/ark/
+      - type: Pricing
+        url: https://www.volcengine.com/docs/82379
+      - type: ProductPage
+        url: https://www.volcengine.com/product/doubao
 common:
   - type: Website
     url: https://www.volcengine.com/product/doubao
+  - type: Documentation
+    url: https://www.volcengine.com/docs/82379
   - type: Plans
     url: plans/doubao-plans-pricing.yml
   - type: RateLimits

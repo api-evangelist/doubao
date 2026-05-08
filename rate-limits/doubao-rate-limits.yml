@@ -5,31 +5,42 @@ provider: ByteDance Doubao
 providerId: doubao
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - ByteDance
-- Multimodal
 - Rate Limiting
-- Quotas
-- Throttling
-description: Placeholder rate-limit artifact for ByteDance Doubao. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Volcano Engine enforces per-endpoint RPM/TPM and concurrent quotas, configurable per
+  workspace/endpoint. Limits visible in the Ark console.
+notes: >-
+  Doubao endpoints are bound to per-deployment quotas; reserved-instance customers receive
+  guaranteed throughput. Exponential backoff is recommended on 429.
 sources:
-- https://www.volcengine.com/product/doubao
+- https://www.volcengine.com/docs/82379
+- https://console.volcengine.com/ark/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: Per-Endpoint RPM
+  scope: endpoint
+  metric: requests-per-minute
+  limit: see Ark console
+  notes: Configurable per deployed model/endpoint.
+- name: Per-Endpoint TPM
+  scope: endpoint
+  metric: tokens-per-minute
+  limit: see Ark console
+- name: Concurrency
+  scope: endpoint
+  metric: concurrent-requests
+  limit: see Ark console
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Exponential backoff with jitter; honor Retry-After.
+- name: Reserved Capacity
+  description: Reserved-instance subscriptions guarantee throughput beyond shared quotas.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

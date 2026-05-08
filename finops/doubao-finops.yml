@@ -5,20 +5,20 @@ provider: ByteDance Doubao
 providerId: doubao
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - ByteDance
-- Multimodal
 - FinOps
-- Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for ByteDance Doubao. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for ByteDance Doubao via Volcano Engine Ark. Pay-as-you-go
+  per-token / per-call billing aggregated to the Volcano Engine cloud invoice. Reserved
+  capacity available for predictable workloads.
+notes: Pricing primarily in CNY; verify FX exposure when consolidating to USD reporting.
 sources:
-- https://www.volcengine.com/product/doubao
+- https://www.volcengine.com/docs/82379
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -26,41 +26,64 @@ alignedWith:
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: ByteDance Doubao
-serviceCategory: AI
+publisherName: Volcano Engine (ByteDance)
+serviceCategory: AI and Machine Learning
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Usage Based
   billingFrequency: Monthly
-  billingCurrency: USD
+  billingCurrency: CNY
   chargeCategories:
   - Usage
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: ByteDance Doubao
-  ServiceCategory: AI
-  ProviderName: ByteDance Doubao
-  PublisherName: ByteDance Doubao
-  InvoiceIssuerName: ByteDance Doubao
-  BillingCurrency: USD
+  ServiceName: Volcano Engine Ark (Doubao)
+  ServiceCategory: AI and Machine Learning
+  ProviderName: Volcano Engine
+  PublisherName: Volcano Engine
+  InvoiceIssuerName: Volcano Engine
+  BillingCurrency: CNY
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: input_tokens
+  description: Input tokens by Doubao variant.
+  unit: tokens
   aggregation: sum
-  dimensions:
-  - account
-  - resource
+  dimensions: [model, endpoint, account]
+- name: output_tokens
+  description: Output tokens by Doubao variant.
+  unit: tokens
+  aggregation: sum
+  dimensions: [model, endpoint, account]
+- name: image_generations
+  description: Seedream image generation calls.
+  unit: images
+  aggregation: sum
+  dimensions: [model, account]
+- name: video_seconds
+  description: Seedance video seconds.
+  unit: seconds
+  aggregation: sum
+  dimensions: [model, account]
+- name: tts_characters
+  description: TTS characters synthesized.
+  unit: characters
+  aggregation: sum
+  dimensions: [voice, account]
+- name: embedding_tokens
+  description: Embedding tokens.
+  unit: tokens
+  aggregation: sum
+  dimensions: [model, account]
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Volcano Engine billing console exports usage by endpoint and model.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag endpoints and use account hierarchy to attribute spend.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Use Doubao-Lite for cheap paths, reserved instances for predictable load.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Reserved-instance renewals and rate-card reviews via Volcano Engine sales.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

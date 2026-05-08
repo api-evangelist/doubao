@@ -5,37 +5,102 @@ provider: ByteDance Doubao
 providerId: doubao
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - ByteDance
-- Multimodal
 - Plans
-description: Placeholder plans/pricing artifact for ByteDance Doubao. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: >-
+  Volcano Engine Ark exposes pay-as-you-go per-token pricing across the Doubao model family,
+  with separate per-call pricing for image (Seedream), video (Seedance), 3D, and TTS surfaces.
+  Pricing primarily published in CNY on the Volcano Engine console.
+notes: >-
+  Verify CNY-denominated rates on the Volcano Engine pricing pages. Doubao-Seed-Code, Doubao-Pro,
+  Doubao-Lite tiers are all available; deep-reasoning variants are billed separately.
 sources:
-- https://www.volcengine.com/product/doubao
+- https://www.volcengine.com/docs/82379
+- https://console.volcengine.com/ark/
 plans:
-- id: doubao-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: doubao-pay-as-you-go
+  name: Volcano Engine Pay As You Go
+  type: usage
+  description: Token-metered consumption billed via Volcano Engine account.
   entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
+  - label: Doubao Text Tokens
+    name: doubao_tokens
+    type: usage
+    metric: tokens
     limit: -1
     timeFrame: usage
-    geo: global
+    geo: china
+    unit: 1000000
+    price: see https://www.volcengine.com/docs/82379
+    userMultiplied: false
+  - label: Embeddings
+    name: doubao_embeddings
+    type: usage
+    metric: tokens
+    limit: -1
+    timeFrame: usage
+    geo: china
+    unit: 1000000
+    price: see Volcano Engine pricing
+    userMultiplied: false
+  - label: Image Generation (Seedream)
+    name: seedream_images
+    type: usage
+    metric: images
+    limit: -1
+    timeFrame: usage
+    geo: china
     unit: 1
-    price: see https://www.volcengine.com/product/doubao
+    price: see Volcano Engine pricing
+    userMultiplied: false
+  - label: Video Generation (Seedance)
+    name: seedance_videos
+    type: usage
+    metric: seconds
+    limit: -1
+    timeFrame: usage
+    geo: china
+    unit: 1
+    price: see Volcano Engine pricing
+    userMultiplied: false
+  - label: TTS
+    name: doubao_tts
+    type: usage
+    metric: characters
+    limit: -1
+    timeFrame: usage
+    geo: china
+    unit: 1
+    price: see Volcano Engine pricing
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: Doubao-Pro / Doubao-Lite / Doubao-Seed
+  - name: Doubao-Seed-Code (coding model)
+  - name: Doubao deep-reasoning variants
+  - name: Seedream (image), Seedance (video)
+  - name: 3D generation
+  - name: TTS / ASR
+- id: doubao-enterprise
+  name: Enterprise / Reserved Capacity
+  type: enterprise
+  description: Reserved-capacity contracts via Volcano Engine sales for predictable workloads.
+  entries:
+  - label: Custom Contract
+    name: enterprise_contract
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: monthly
+    geo: china
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Negotiated rate cards and SLAs
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
