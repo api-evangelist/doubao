@@ -1,7 +1,7 @@
 aid: doubao
 url: https://raw.githubusercontent.com/api-evangelist/doubao/refs/heads/main/apis.yml
 name: ByteDance Doubao
-x-type: company
+kind: company
 description: >-
   Doubao is ByteDance's foundation model family, served via the Volcano Engine Ark platform.
   Offers chat completions, deep reasoning, multimodal vision, embeddings, image generation
