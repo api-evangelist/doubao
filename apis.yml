@@ -48,6 +48,8 @@ apis:
       - type: ProductPage
         url: https://www.volcengine.com/product/doubao
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/bytedance
   - type: Website
     url: https://www.volcengine.com/product/doubao
   - type: Documentation
