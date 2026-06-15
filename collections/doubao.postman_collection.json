@@ -1,0 +1,719 @@
+{
+  "item": [
+    {
+      "id": "faa0749f-5449-44ac-b668-1cb735cd3e6e",
+      "name": "Chat",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4f04860c-5b5a-4b39-91ae-91268bd52ab6",
+          "name": "Create a chat completion",
+          "request": {
+            "name": "Create a chat completion",
+            "description": {},
+            "url": {
+              "path": [
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    }\n  ],\n  \"temperature\": 1,\n  \"top_p\": 1,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"tools\": [\n    {\n      \"key_0\": 4570.245180305619,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 9389.224032719223\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f41804db-7f49-4f93-8668-7a3c7f7b3d0c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"doubao-seed-1-6\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"temperature\": 1,\n  \"top_p\": 1,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"tools\": [\n    {\n      \"key_0\": true,\n      \"key_1\": 4594,\n      \"key_2\": 3823.736840314216\n    },\n    {\n      \"key_0\": 2572,\n      \"key_1\": \"string\",\n      \"key_2\": 4117\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"string\",\n  \"created\": 5684,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 5656,\n      \"message\": {\n        \"role\": \"tool\",\n        \"content\": \"string\",\n        \"name\": \"string\",\n        \"tool_call_id\": \"string\"\n      },\n      \"finish_reason\": \"string\"\n    },\n    {\n      \"index\": 2478,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"string\",\n        \"name\": \"string\",\n        \"tool_call_id\": \"string\"\n      },\n      \"finish_reason\": \"string\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 4422,\n    \"completion_tokens\": 8300,\n    \"total_tokens\": 278\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e05e9559-29b4-4d5d-b68b-65997b0bb6ce",
+      "name": "Embeddings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc1a5b4c-301d-4a6e-99da-c3df5f4a0cce",
+          "name": "Create embeddings",
+          "request": {
+            "name": "Create embeddings",
+            "description": {},
+            "url": {
+              "path": [
+                "embeddings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"encoding_format\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "52423e0c-b9c4-484c-bc36-0c7d74c6f7b7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "embeddings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"encoding_format\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e9d06a8c-bf56-44e6-8d0f-e134c201d025",
+      "name": "Images",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d4119186-a406-48b5-a9c1-0431e23679dd",
+          "name": "Generate images (Seedream)",
+          "request": {
+            "name": "Generate images (Seedream)",
+            "description": {},
+            "url": {
+              "path": [
+                "images",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"response_format\": \"<string>\",\n  \"size\": \"<string>\",\n  \"n\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "633cdefe-4375-4b2c-92c5-3a5eede6d8bb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "images",
+                    "generations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"response_format\": \"<string>\",\n  \"size\": \"<string>\",\n  \"n\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ef50351b-fab7-4677-ba55-afff13049f21",
+      "name": "Videos",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c6f644f0-0c16-4b3c-9f4a-95b4628b36ad",
+          "name": "Create a video generation task (Seedance)",
+          "request": {
+            "name": "Create a video generation task (Seedance)",
+            "description": {},
+            "url": {
+              "path": [
+                "contents",
+                "generations",
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"content\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"image_url\": {\n        \"url\": \"<string>\"\n      }\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"image_url\": {\n        \"url\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b3d99b7-987c-4cb1-a16c-c68204b7a8c2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contents",
+                    "generations",
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"content\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"image_url\": {\n        \"url\": \"<string>\"\n      }\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"image_url\": {\n        \"url\": \"<string>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9094df9-ad2c-4d1b-b32e-867a1ebc9490",
+          "name": "Retrieve video generation task",
+          "request": {
+            "name": "Retrieve video generation task",
+            "description": {},
+            "url": {
+              "path": [
+                "contents",
+                "generations",
+                "tasks",
+                ":task_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "task_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e24c0e0-63bf-4634-84b5-27e54bafab80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contents",
+                    "generations",
+                    "tasks",
+                    ":task_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "task_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04a98e11-9aab-487c-b142-c25527252525",
+          "name": "Cancel video generation task",
+          "request": {
+            "name": "Cancel video generation task",
+            "description": {},
+            "url": {
+              "path": [
+                "contents",
+                "generations",
+                "tasks",
+                ":task_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "task_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c5f97fac-83a5-4ded-ba25-dde84fe7f187",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contents",
+                    "generations",
+                    "tasks",
+                    ":task_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "task_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "db8898f2-6416-47ef-8a69-78b827a126c5",
+      "name": "Batch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dbc77499-c269-402a-b8e2-f3e5336b5618",
+          "name": "Create a batch chat completion job",
+          "request": {
+            "name": "Create a batch chat completion job",
+            "description": {},
+            "url": {
+              "path": [
+                "batch",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    }\n  ],\n  \"temperature\": 1,\n  \"top_p\": 1,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"tools\": [\n    {\n      \"key_0\": 4570.245180305619,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": 9389.224032719223\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7c5bae3-0fe1-4154-bc87-5db297201f71",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"doubao-seed-1-6\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"temperature\": 1,\n  \"top_p\": 1,\n  \"max_tokens\": \"<integer>\",\n  \"stream\": false,\n  \"tools\": [\n    {\n      \"key_0\": true,\n      \"key_1\": 4594,\n      \"key_2\": 3823.736840314216\n    },\n    {\n      \"key_0\": 2572,\n      \"key_1\": \"string\",\n      \"key_2\": 4117\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ark.cn-beijing.volces.com/api/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2903ceb5-9ae8-4ad3-bd4d-e70333eac754",
+    "name": "Volcano Engine Ark API (Doubao)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Volcano Engine Ark serves ByteDance's Doubao foundation models with an OpenAI-compatible API surface. Provides chat completions, embeddings, image generation (Seedream), video generation (Seedance), and batch operations. Endpoints derived from public Volcano Engine documentation at https://www.volcengine.com/docs/82379 — best-effort, not exhaustive. Authenticates with a Bearer API key minted in the Ark console.\n\nContact Support:\n Name: Volcano Engine",
+      "type": "text/plain"
+    }
+  }
+}

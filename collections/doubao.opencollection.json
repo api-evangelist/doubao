@@ -1,0 +1,167 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Volcano Engine Ark API (Doubao)",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a chat completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a chat completion"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Embeddings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/embeddings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create embeddings"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Images",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate images (Seedream)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate images (Seedream)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Videos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a video generation task (Seedance)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a video generation task (Seedance)"
+        },
+        {
+          "info": {
+            "name": "Retrieve video generation task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks/:task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve video generation task"
+        },
+        {
+          "info": {
+            "name": "Cancel video generation task",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks/:task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel video generation task"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a batch chat completion job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/batch/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a batch chat completion job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
