@@ -7,7 +7,7 @@ description: >-
   Offers chat completions, deep reasoning, multimodal vision, embeddings, image generation
   (Seedream), video generation (Seedance), 3D generation, and TTS through OpenAI-compatible
   and native endpoints.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - LLM
@@ -25,7 +25,7 @@ apis:
       OpenAI-compatible chat, responses, embedding, batch, image (Seedream), video (Seedance),
       3D, and TTS APIs serving the Doubao model family. Base URL https://ark.cn-beijing.volces.com/api/v3.
       Includes the Doubao-Seed-Code coding model.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.volcengine.com/docs/82379
     baseURL: https://ark.cn-beijing.volces.com/api/v3
     tags:
