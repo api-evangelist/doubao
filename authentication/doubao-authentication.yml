@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/doubao-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: Ark API Key
+  sources:
+  - openapi/doubao-openapi.yml

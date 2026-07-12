@@ -48,6 +48,12 @@ apis:
       - type: ProductPage
         url: https://www.volcengine.com/product/doubao
 common:
+  - type: VulnerabilityDisclosure
+    url: security/doubao-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/doubao-domain-security.yml
+  - type: Authentication
+    url: authentication/doubao-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/bytedance
   - type: Website
