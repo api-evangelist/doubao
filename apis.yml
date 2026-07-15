@@ -48,6 +48,8 @@ apis:
       - type: ProductPage
         url: https://www.volcengine.com/product/doubao
 common:
+  - type: AgenticAccess
+    url: agentic-access/doubao-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/doubao-vulnerability-disclosure.yml
   - type: DomainSecurity
