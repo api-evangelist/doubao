@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Volcano Engine Ark API (Doubao) Batch API
+  description: Volcano Engine Ark serves ByteDance's Doubao foundation models with an OpenAI-compatible API surface. Provides chat completions, embeddings, image generation (Seedream), video generation (Seedance), and batch operations. Endpoints derived from public Volcano Engine documentation at https://www.volcengine.com/docs/82379 — best-effort, not exhaustive. Authenticates with a Bearer API key minted in the Ark console.
+  version: '3'
+  contact:
+    name: Volcano Engine
+    url: https://www.volcengine.com
+  license:
+    name: Proprietary
+servers:
+- url: https://ark.cn-beijing.volces.com/api/v3
+  description: Volcano Engine Ark - Beijing region
+security:
+- BearerAuth: []
+tags:
+- name: Batch
+paths:
+  /batch/chat/completions:
+    post:
+      tags:
+      - Batch
+      summary: Create a batch chat completion job
+      operationId: createBatchChatCompletion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCompletionRequest'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ChatCompletionRequest:
+      type: object
+      required:
+      - model
+      - messages
+      properties:
+        model:
+          type: string
+          example: doubao-seed-1-6
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        temperature:
+          type: number
+          default: 1
+        top_p:
+          type: number
+          default: 1
+        max_tokens:
+          type: integer
+        stream:
+          type: boolean
+          default: false
+        tools:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+        content:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                text:
+                  type: string
+                image_url:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+        name:
+          type: string
+        tool_call_id:
+          type: string
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Ark API Key

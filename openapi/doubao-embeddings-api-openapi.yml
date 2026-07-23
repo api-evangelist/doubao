@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Volcano Engine Ark API (Doubao) Batch Embeddings API
+  description: Volcano Engine Ark serves ByteDance's Doubao foundation models with an OpenAI-compatible API surface. Provides chat completions, embeddings, image generation (Seedream), video generation (Seedance), and batch operations. Endpoints derived from public Volcano Engine documentation at https://www.volcengine.com/docs/82379 — best-effort, not exhaustive. Authenticates with a Bearer API key minted in the Ark console.
+  version: '3'
+  contact:
+    name: Volcano Engine
+    url: https://www.volcengine.com
+  license:
+    name: Proprietary
+servers:
+- url: https://ark.cn-beijing.volces.com/api/v3
+  description: Volcano Engine Ark - Beijing region
+security:
+- BearerAuth: []
+tags:
+- name: Embeddings
+paths:
+  /embeddings:
+    post:
+      tags:
+      - Embeddings
+      summary: Create embeddings
+      operationId: createEmbeddings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model
+              - input
+              properties:
+                model:
+                  type: string
+                input:
+                  oneOf:
+                  - type: string
+                  - type: array
+                    items:
+                      type: string
+                encoding_format:
+                  type: string
+                  enum:
+                  - float
+                  - base64
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Ark API Key

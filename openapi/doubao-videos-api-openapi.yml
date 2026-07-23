@@ -1,0 +1,88 @@
+openapi: 3.1.0
+info:
+  title: Volcano Engine Ark API (Doubao) Batch Videos API
+  description: Volcano Engine Ark serves ByteDance's Doubao foundation models with an OpenAI-compatible API surface. Provides chat completions, embeddings, image generation (Seedream), video generation (Seedance), and batch operations. Endpoints derived from public Volcano Engine documentation at https://www.volcengine.com/docs/82379 — best-effort, not exhaustive. Authenticates with a Bearer API key minted in the Ark console.
+  version: '3'
+  contact:
+    name: Volcano Engine
+    url: https://www.volcengine.com
+  license:
+    name: Proprietary
+servers:
+- url: https://ark.cn-beijing.volces.com/api/v3
+  description: Volcano Engine Ark - Beijing region
+security:
+- BearerAuth: []
+tags:
+- name: Videos
+paths:
+  /contents/generations/tasks:
+    post:
+      tags:
+      - Videos
+      summary: Create a video generation task (Seedance)
+      operationId: createVideoTask
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model
+              - content
+              properties:
+                model:
+                  type: string
+                content:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      text:
+                        type: string
+                      image_url:
+                        type: object
+                        properties:
+                          url:
+                            type: string
+      responses:
+        '200':
+          description: OK
+  /contents/generations/tasks/{task_id}:
+    get:
+      tags:
+      - Videos
+      summary: Retrieve video generation task
+      operationId: getVideoTask
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Videos
+      summary: Cancel video generation task
+      operationId: deleteVideoTask
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Ark API Key
