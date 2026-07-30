@@ -7,7 +7,20 @@ description: >-
   Offers chat completions, deep reasoning, multimodal vision, embeddings, image generation
   (Seedream), video generation (Seedance), 3D generation, and TTS through OpenAI-compatible
   and native endpoints.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/doubao.png
 tags:
   - AI
   - LLM
@@ -19,34 +32,84 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: doubao:ark
-    name: Volcano Engine Ark API
-    description: >-
-      OpenAI-compatible chat, responses, embedding, batch, image (Seedream), video (Seedance),
-      3D, and TTS APIs serving the Doubao model family. Base URL https://ark.cn-beijing.volces.com/api/v3.
-      Includes the Doubao-Seed-Code coding model.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.volcengine.com/docs/82379
-    baseURL: https://ark.cn-beijing.volces.com/api/v3
-    tags:
-      - AI
-      - LLM
-      - Chat Completions
-      - Vision
-      - Embeddings
-      - Image Generation
-      - Video Generation
-      - Audio
-      - OpenAI Compatible
-    properties:
-      - type: Documentation
-        url: https://www.volcengine.com/docs/82379
-      - type: Console
-        url: https://console.volcengine.com/ark/
-      - type: Pricing
-        url: https://www.volcengine.com/docs/82379
-      - type: ProductPage
-        url: https://www.volcengine.com/product/doubao
+- aid: doubao:ark
+  name: Volcano Engine Ark API
+  description: >-
+    OpenAI-compatible chat, responses, embedding, batch, image (Seedream), video (Seedance), 3D, and TTS
+    APIs serving the Doubao model family. Base URL https://ark.cn-beijing.volces.com/api/v3. Includes
+    the Doubao-Seed-Code coding model.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - AI
+  - LLM
+  - Chat Completions
+  - Vision
+  - Embeddings
+  - Image Generation
+  - Video Generation
+  - Audio
+  - OpenAI Compatible
+  properties:
+  - type: Documentation
+    url: https://www.volcengine.com/docs/82379
+  - type: Console
+    url: https://console.volcengine.com/ark/
+  - type: Pricing
+    url: https://www.volcengine.com/docs/82379
+  - type: ProductPage
+    url: https://www.volcengine.com/product/doubao
+- aid: doubao:doubao-batch-api
+  name: ByteDance Doubao Batch API
+  description: The Batch API from ByteDance Doubao — 1 operation(s) for batch.
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - Batch
+  properties:
+  - type: OpenAPI
+    url: openapi/doubao-batch-api-openapi.yml
+- aid: doubao:doubao-chat-api
+  name: ByteDance Doubao Chat API
+  description: The Chat API from ByteDance Doubao — 1 operation(s) for chat.
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/doubao-chat-api-openapi.yml
+- aid: doubao:doubao-embeddings-api
+  name: ByteDance Doubao Embeddings API
+  description: The Embeddings API from ByteDance Doubao — 1 operation(s) for embeddings.
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - Embeddings
+  properties:
+  - type: OpenAPI
+    url: openapi/doubao-embeddings-api-openapi.yml
+- aid: doubao:doubao-images-api
+  name: ByteDance Doubao Images API
+  description: The Images API from ByteDance Doubao — 1 operation(s) for images.
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - Images
+  properties:
+  - type: OpenAPI
+    url: openapi/doubao-images-api-openapi.yml
+- aid: doubao:doubao-videos-api
+  name: ByteDance Doubao Videos API
+  description: The Videos API from ByteDance Doubao — 2 operation(s) for videos.
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - Videos
+  properties:
+  - type: OpenAPI
+    url: openapi/doubao-videos-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/doubao-agentic-access.yml
