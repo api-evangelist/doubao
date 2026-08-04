@@ -1,0 +1,22 @@
+{
+  "provider": "doubao",
+  "sources": [
+    "doubao-batch-api-openapi.yml",
+    "doubao-chat-api-openapi.yml",
+    "doubao-embeddings-api-openapi.yml",
+    "doubao-images-api-openapi.yml",
+    "doubao-videos-api-openapi.yml"
+  ],
+  "outputs": [
+    "doubao-batch-api-openapi.yml",
+    "doubao-chat-api-openapi.yml",
+    "doubao-embeddings-api-openapi.yml",
+    "doubao-images-api-openapi.yml",
+    "doubao-videos-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
