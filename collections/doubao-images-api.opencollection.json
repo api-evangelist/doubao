@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Volcano Engine Ark API (Doubao) Batch Images API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Images",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate images (Seedream)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/images/generations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate images (Seedream)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

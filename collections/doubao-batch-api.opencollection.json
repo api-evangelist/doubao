@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Volcano Engine Ark API (Doubao) Batch API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a batch chat completion job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/batch/chat/completions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a batch chat completion job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

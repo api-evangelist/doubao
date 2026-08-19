@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Volcano Engine Ark API (Doubao) Batch Videos API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Videos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a video generation task (Seedance)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a video generation task (Seedance)"
+        },
+        {
+          "info": {
+            "name": "Retrieve video generation task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks/:task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve video generation task"
+        },
+        {
+          "info": {
+            "name": "Cancel video generation task",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks/:task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel video generation task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
