@@ -22,6 +22,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/doubao.png
 tags:
+  - Artificial Intelligence
+  - LLM
+  - Inference
+  - ByteDance
+  - Multi-Modal
+  - Volcano Engine
+tags_raw:
   - AI
   - LLM
   - Inference
@@ -42,6 +49,16 @@ apis:
   humanURL: https://www.volcengine.com/docs/82379
   baseURL: https://ark.cn-beijing.volces.com/api/v3
   tags:
+  - Artificial Intelligence
+  - LLM
+  - Chat Completions
+  - Vision
+  - Embeddings
+  - Image-Generation
+  - Video Generation
+  - Audio
+  - OpenAI-Compatible
+  tags_raw:
   - AI
   - LLM
   - Chat Completions
@@ -96,6 +113,8 @@ apis:
   humanURL: https://www.volcengine.com/docs/82379
   baseURL: https://ark.cn-beijing.volces.com/api/v3
   tags:
+  - Image
+  tags_raw:
   - Images
   properties:
   - type: OpenAPI
