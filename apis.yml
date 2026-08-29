@@ -7,6 +7,18 @@ description: >-
   Offers chat completions, deep reasoning, multimodal vision, embeddings, image generation
   (Seedream), video generation (Seedance), 3D generation, and TTS through OpenAI-compatible
   and native endpoints.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
