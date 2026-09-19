@@ -138,6 +138,8 @@ apis:
   humanURL: https://www.volcengine.com/docs/82379
   baseURL: https://ark.cn-beijing.volces.com/api/v3
   tags:
+  - Video
+  tags_raw:
   - Videos
   properties:
   - type: OpenAPI
