@@ -1,11 +1,7 @@
 {
   "provider": "doubao",
   "sources": [
-    "doubao-batch-api-openapi.yml",
-    "doubao-chat-api-openapi.yml",
-    "doubao-embeddings-api-openapi.yml",
-    "doubao-images-api-openapi.yml",
-    "doubao-videos-api-openapi.yml"
+    "_original/doubao-openapi.yml"
   ],
   "outputs": [
     "doubao-batch-api-openapi.yml",
@@ -17,6 +13,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "doubao-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "doubao-batch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doubao-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doubao-embeddings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doubao-images-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "doubao-videos-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
