@@ -67,7 +67,7 @@ apis:
   - Chat Completions
   - Vision
   - Embeddings
-  - Image-Generation
+  - Image Generation
   - Video Generation
   - Audio
   - OpenAI-Compatible
@@ -81,6 +81,7 @@ apis:
   - Video Generation
   - Audio
   - OpenAI Compatible
+  - Image-Generation
   properties:
   - type: Documentation
     url: https://www.volcengine.com/docs/82379
