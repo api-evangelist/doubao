@@ -101,16 +101,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/doubao-batch-api-openapi.yml
-- aid: doubao:doubao-chat-api
-  name: ByteDance Doubao Chat API
-  description: The Chat API from ByteDance Doubao — 1 operation(s) for chat.
-  humanURL: https://www.volcengine.com/docs/82379
-  baseURL: https://ark.cn-beijing.volces.com/api/v3
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/doubao-chat-api-openapi.yml
 - aid: doubao:doubao-embeddings-api
   name: ByteDance Doubao Embeddings API
   description: The Embeddings API from ByteDance Doubao — 1 operation(s) for embeddings.
@@ -145,6 +135,16 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/doubao-videos-api-openapi.yml
+- aid: doubao:doubao-chat-completions-api
+  name: ByteDance Doubao Chat Completions API
+  description: The Chat Completions API from ByteDance Doubao — 1 operation(s) for chat completions.
+  humanURL: https://www.volcengine.com/docs/82379
+  baseURL: https://ark.cn-beijing.volces.com/api/v3
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/doubao-chat-completions-api-openapi.yml
 common:
   - type: CapabilityMap
     url: capabilities/doubao-capability-edges.yml

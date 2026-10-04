@@ -14,12 +14,12 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: Chat
+- name: Chat Completions
 paths:
   /chat/completions:
     post:
       tags:
-      - Chat
+      - Chat Completions
       summary: Create a chat completion
       operationId: createChatCompletion
       requestBody:
@@ -37,35 +37,6 @@ paths:
                 $ref: '#/components/schemas/ChatCompletionResponse'
 components:
   schemas:
-    ChatCompletionRequest:
-      type: object
-      required:
-      - model
-      - messages
-      properties:
-        model:
-          type: string
-          example: doubao-seed-1-6
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChatMessage'
-        temperature:
-          type: number
-          default: 1
-        top_p:
-          type: number
-          default: 1
-        max_tokens:
-          type: integer
-        stream:
-          type: boolean
-          default: false
-        tools:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
     ChatCompletionResponse:
       type: object
       properties:
@@ -129,6 +100,35 @@ components:
           type: string
         tool_call_id:
           type: string
+    ChatCompletionRequest:
+      type: object
+      required:
+      - model
+      - messages
+      properties:
+        model:
+          type: string
+          example: doubao-seed-1-6
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        temperature:
+          type: number
+          default: 1
+        top_p:
+          type: number
+          default: 1
+        max_tokens:
+          type: integer
+        stream:
+          type: boolean
+          default: false
+        tools:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   securitySchemes:
     BearerAuth:
       type: http
