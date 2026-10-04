@@ -146,6 +146,9 @@ apis:
   - type: OpenAPI
     url: openapi/doubao-videos-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/doubao-capability-edges.yml
+    name: ByteDance Doubao Business Capability Map
   - type: AgenticAccess
     url: agentic-access/doubao-agentic-access.yml
   - type: VulnerabilityDisclosure
