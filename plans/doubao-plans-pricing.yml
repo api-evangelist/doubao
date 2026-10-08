@@ -107,3 +107,33 @@ plans:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - subscription
+  units:
+  - compute
+  - negotiated
+  - object
+  - token
+  plans:
+  - name: Volcano Engine Pay As You Go
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - compute
+    - object
+    - token
+    periods:
+    - per-use
+  - name: Enterprise / Reserved Capacity
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - month
