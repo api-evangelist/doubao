@@ -1,0 +1,87 @@
+edges:
+- partner_name: OpenRouter
+  partner: openrouter
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - model-maker
+  router_signals:
+    model-maker:
+      models: 7
+      router_ids:
+      - bytedance
+      - bytedance-seed
+      tools_share: 0.86
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: LiteLLM
+  partner: litellm
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json
+  coverage_role:
+  - provider
+  router_signals:
+    provider:
+      models: 14
+      router_ids:
+      - volcengine
+      tools_share: 1.0
+      structured_output_share: 0.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: LLM Gateway
+  partner: llmgateway-io
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://api.llmgateway.io/v1/models
+  coverage_role:
+  - provider
+  router_signals:
+    provider:
+      models: 26
+      router_ids:
+      - bytedance
+      tools_share: 0.62
+      structured_output_share: 0.54
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: OpenAI
+  partner: openai
+  partner_match: domain
+  type: contract
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  evidence: https://github.com/api-evangelist/doubao/blob/main/openapi/doubao-chat-completions-api-openapi.yml#L4
+  contract_reference:
+    repo: doubao
+    spec_file: doubao-chat-completions-api-openapi.yml
+    property: description
+    value: OpenAI-compatible
+    note: 'doubao declares OpenAI compatibility: ''description: Volcano Engine Ark serves ByteDance''s Doubao foundation
+      models with an OpenAI-compatible API surface. Provides chat completions, embeddings, image '''
+    detected_by: sweep-model-routing.py
+    detected: '2026-10-13'
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked:
+- https://api.llmgateway.io/v1/models
+- https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json
+- https://openrouter.ai/api/v1/models
