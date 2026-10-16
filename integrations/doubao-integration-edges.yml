@@ -76,7 +76,7 @@ edges:
     note: 'doubao declares OpenAI compatibility: ''description: Volcano Engine Ark serves ByteDance''s Doubao foundation
       models with an OpenAI-compatible API surface. Provides chat completions, embeddings, image '''
     detected_by: sweep-model-routing.py
-    detected: '2026-10-13'
+    detected: '2026-10-15'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
 generated: '2026-10-13'
